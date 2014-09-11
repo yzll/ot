@@ -1,0 +1,67 @@
+<!-- 导航条
+================================================== -->
+<style>
+	.fixed.fixed-top{z-index:8;background:#fff;width:100%;padding:0;border-bottom:solid 3px #0a8;-webkit-box-shadow:0 3px 6px rgba(0, 0, 0, .175);box-shadow:0 3px 6px rgba(0, 0, 0, .175);}
+</style>
+
+<div class="layout bg-black bg-inverse hidden-l">
+    <div class="container height-large"> 
+    	<span class="float-right text-small text-gray hidden-l">
+          <a class="text-main" href="http://www.pintuer.com">注册</a>
+          <span> | </span>
+          <a class="text-main" href="http://www.pintuer.com">登录</a>
+          <span> | </span>
+          <a class="text-main" href="http://www.pintuer.com">积分兑换</a>
+          <span> | </span>
+          <a class="text-main" href="http://www.pintuer.com">帮助中心</a>
+          <span> | </span>
+          <a href="#" class="text-main win-homepage">设为首页</a>
+	      <span> | </span>
+	      <a href="#" class="text-main win-favorite">加入收藏</a>
+        </span>
+		欢迎浏览<a href="http://www.pintuer.com">扬州灵力电子商务</a>
+    </div>
+</div>
+<!--导航-->
+<div class="container-layout padding-big-top padding-big-bottom fixed">
+    <div class="container padding-top padding-bottom">
+        <div class="line">
+            <div class="xl12 xs3 xm3 xb2">
+                <button class="button icon-navicon float-right" data-target="#header-demo"></button>
+                <a target="_blank" href="http://www.pintuer.com">
+                    <img src="__IMG__/onethink.png"/>
+                </a>
+            </div>
+            <div class=" xl12 xs9 xm9 xb10 nav-navicon" id="header-demo">
+                <div class="xs8 xm6 xb5 padding-small">
+                    <ul class="nav nav-menu nav-inline nav-big">
+                    	<foreach name="channel" item="item">
+	                        <li>
+	                       		<a href="{$item['url']}">{$item['title']}</a>
+	                       		<notempty name="item['_child']">
+	                       			<ul class="drop-menu">
+	                       				<foreach name="item['child']" item="ite">
+			                                <li>
+			                                	<a href="{$ite['url']}">{$ite['title']}</a>
+			                                </li>
+		                                </foreach>
+		                            </ul>
+	                       		</notempty>
+	                        </li>
+                        </foreach>
+                    </ul>
+                </div>
+                <div class="xs4 xm3 xb4">
+                    <form>
+                        <div class="input-group padding-little-top">
+                            <input type="text" class="input border-main radius-none" name="keywords" size="30" placeholder="关键词" /> <span class="addbtn"><button type="button" class="button bg-main icon-search radius-none"></button></span>
+                        </div>
+                    </form>
+                </div>
+                <div class="hidden-l hidden-s xm3 xb3">
+                    <div class="text-red text-big icon-phone height-large text-right">热线 400 1234567</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
